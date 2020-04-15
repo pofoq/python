@@ -1,11 +1,18 @@
 # Task 4
 
-n = input("Enter a number: ")
-res = int(n[0])
-i = 1
-while i < len(n):
-    if int(n[i]) > res:
-        res = int(n[i])
-    i += 1
+n = int(input("Enter a number: "))
+ln = 1
+d = n % 10
+n = n // 10
+num_max = d
 
-print("The bigest number is {}".format(res))
+while n > 0:
+    n = n // 10
+    d = n % 10
+    if num_max < d:
+        num_max = d
+    if num_max == 9:
+        break
+
+print("Max number is {}".format(num_max))
+
